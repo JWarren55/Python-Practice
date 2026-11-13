@@ -1,27 +1,21 @@
-a = [3, 4]
-b = [6, 8]
+import math
+import numpy as np
+
+a = np.array([3, 4])
+b = np.array([6, 8])
 
 def dot_product(a, b):
-    """
-    Calculate the dot product of 2 vectors
-    
-    Args:
-        a: first vector
-        b: second vector
-        
-    Returns:
-        Dot of 2 Vectors
-        
-    Raises:
-        Value Error, if length do not match
-    """
-    
-    if len(a) != len(b):
-        raise ValueError("Vectors must have the same length")
-    total = 0
-    for i in range(len(a)):
-        total += (a[i] * b[i])
-    
-    return total
+    # if len(a) != len(b):
+    #     raise ValueError("Vectors must have the same length")
+    # total = 0
+    # for i in range(len(a)):
+    #     total += (a[i] * b[i])
+    return sum(a * b)
+
+def magnitude(vector):
+    ## math.sqrt(sum(np.square(vector)))
+    return np.linalg.norm(vector)
 
 print(dot_product(a, b))
+
+print(magnitude(a))

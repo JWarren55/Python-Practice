@@ -23,7 +23,7 @@ def cosine_similarity(a, b):
     if mag_a == 0 or mag_b == 0:
         raise ValueError("Cannot calculate cosine similarity with a zero vector")
     return (dot_product(a, b) /
-            np.dot(mag_a(a), mag_b(b)) )
+            np.dot(mag_a, mag_b) )
 
 print(dot_product(a, b))
 
